@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:shopbud/shopping_list/list_card.dart';
+import 'package:shopbud/shopping_list/added_item_card.dart';
 import 'package:shopbud/model/shoppinglist.dart';
-import 'package:shopbud/utils/fake_data.dart';
+import 'package:shopbud/model/item.dart';
 
-class HistoryLists extends StatelessWidget {
-  final List<ShoppingList> lists;
+class NewList extends StatelessWidget {
+  final List<Item> lists;
 
-  HistoryLists(this.lists);
+  NewList(this.lists);
 
   @override
   Widget build(BuildContext context) {
@@ -18,28 +18,28 @@ class HistoryLists extends StatelessWidget {
     return ListView.builder(
       itemCount: lists.length,
       itemBuilder: (context, int) {
-        return ListCard(lists[int]);
+        return AddedItemCard(lists[int]);
       },
     );
   }
 }
 
-class HistoryListsPage extends StatefulWidget {
+class NewListPage extends StatefulWidget {
 
   final String title;
 
-  HistoryListsPage({
-    this.title="My Shopping List"
+  NewListPage({
+    this.title="New List"
   });
 
 
   @override
-  _HistoryListsPageState createState() => new _HistoryListsPageState();
+  _NewListPageState createState() => new _NewListPageState();
 }
 
-class _HistoryListsPageState extends State<HistoryListsPage> {
+class _NewListPageState extends State<NewListPage> {
 
-  List<ShoppingList> shoppingLists = FakeData.shoppingLists;
+  List<Item> items = [];
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class _HistoryListsPageState extends State<HistoryListsPage> {
         backgroundColor: Colors.black87,
       ),
       body: Container(
-        child: HistoryLists(shoppingLists),
+        child: NewList(items),
       ),
     );
   }

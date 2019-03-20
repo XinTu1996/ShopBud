@@ -182,7 +182,7 @@ class MyHomePage extends StatelessWidget {
                             menu.items[i],
                           ),
                           onTap: () {
-                            Navigator.pop(context);
+                            //Navigator.pop(context);
                             Navigator.pushNamed(
                                 context, "/${menu.items[i]}");
                           }),
