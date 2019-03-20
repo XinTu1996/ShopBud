@@ -32,50 +32,56 @@ class _ListCardState extends State<ListCard> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
         elevation: 4.0,
         color: Colors.black87,
-        child: Container(
-          decoration: BoxDecoration(
-            border: Border(
-              left: BorderSide(
-                width: 6.0,
-                color: Colors.lightGreen,
-              ),
-            ),
-          ),
-          padding: const EdgeInsets.only(
-            top: 2.0,
-            bottom: 2.0,
-            left: 10.0,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Text(widget.list.name,
-                      style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold)),
-                  Text(widget.list.note,
-                      style: TextStyle(color: Colors.white, fontSize: 20)),
-                  Text("created on: " + cT,
-                      style: TextStyle(color: Colors.white, fontSize: 12)),
-                  Text("updated on: " + uT,
-                      style: TextStyle(color: Colors.white, fontSize: 12)),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Icon(
-                  Icons.chevron_right,
-                  color: Colors.white,
+        child: GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(
+                context, "/Old List");
+          },
+          child: Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  left: BorderSide(
+                    width: 6.0,
+                    color: Colors.lightGreen,
+                  ),
                 ),
               ),
-            ],
-          )
+              padding: const EdgeInsets.only(
+                top: 2.0,
+                bottom: 2.0,
+                left: 10.0,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text(widget.list.name,
+                          style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold)),
+                      Text(widget.list.note,
+                          style: TextStyle(color: Colors.white, fontSize: 20)),
+                      Text("created on: " + cT,
+                          style: TextStyle(color: Colors.white, fontSize: 12)),
+                      Text("updated on: " + uT,
+                          style: TextStyle(color: Colors.white, fontSize: 12)),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Icon(
+                      Icons.chevron_right,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              )
+          ),
         ),
-      ),
+        ),
     );
   }
 
