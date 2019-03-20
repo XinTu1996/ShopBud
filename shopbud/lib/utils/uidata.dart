@@ -6,21 +6,17 @@ import 'package:flutter/material.dart';
 class UIData {
   //routes
   static const String homeRoute = "/home";
-  static const String profileOneRoute = "/View Profile";
-  static const String profileTwoRoute = "/Profile 2";
-  static const String notFoundRoute = "/No Search Result";
-  static const String timelineOneRoute = "/Feed";
-  static const String timelineTwoRoute = "/Tweets";
-  static const String settingsOneRoute = "/Device Settings";
-  static const String shoppingOneRoute = "/Shopping List";
-  static const String shoppingTwoRoute = "/Shopping Details";
-  static const String shoppingThreeRoute = "/Product Details";
-  static const String paymentOneRoute = "/Credit Card";
-  static const String paymentTwoRoute = "/Payment Success";
-  static const String loginOneRoute = "/Login With OTP";
-  static const String loginTwoRoute = "/Login 2";
-  static const String dashboardOneRoute = "/Dashboard 1";
-  static const String dashboardTwoRoute = "/Dashboard 2";
+  static const String loginRoute = "/Login";
+  static const String registerRoute = "/Register";
+
+  static const String advantageCardRoute = "/Advantage Card";
+  static const String paymentRoute = "/Payment";
+  static const String giftCardRoute = "/Gift Card";
+  static const String loginInfoRoute = "/Login Info";
+
+  static const String historyListsRoute = "/History Lists";
+  static const String newListRoute = "/Create New List";
+  //static const String shoppingThreeRoute = "/Product Details";
 
   //strings
   static const String appName = "ShopBud";
@@ -66,7 +62,7 @@ class UIData {
 
   static const MaterialColor ui_kit_color = Colors.grey;
 
-//colors
+  //colors
   static List<Color> kitGradients = [
     // new Color.fromRGBO(103, 218, 255, 1.0),
     // new Color.fromRGBO(3, 169, 244, 1.0),

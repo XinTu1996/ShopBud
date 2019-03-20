@@ -8,11 +8,12 @@ class Menu {
   BuildContext context;
   Color menuColor;
 
-  Menu(
-      { this.title,
-        this.icon,
-        this.image,
-        this.items,
-        this.context,
-        this.menuColor = Colors.black});
+  Menu({
+    this.title,
+    this.icon,
+    this.image,
+    this.items,
+    this.context,
+    this.menuColor = Colors.black
+  });
 }
