@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:shopbud/shopping_list/added_item_card.dart';
+import 'package:shopbud/model/shoppinglist.dart';
 import 'package:shopbud/model/item.dart';
 import 'package:shopbud/utils/fake_data.dart';
 
 class OldList extends StatelessWidget {
-  final List<Item> lists;
+  final ShoppingList list;
 
-  OldList(this.lists);
+  OldList(this.list);
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +17,9 @@ class OldList extends StatelessWidget {
 
   ListView _buildList(context) {
     return ListView.builder(
-      itemCount: lists.length,
+      itemCount: list.items.length,
       itemBuilder: (context, int) {
-        return AddedItemCard(lists[int]);
+        return AddedItemCard(list.items[int]);
       },
     );
   }
@@ -26,31 +27,24 @@ class OldList extends StatelessWidget {
 
 class OldListPage extends StatefulWidget {
 
-  final String title;
-
-  OldListPage({
-    this.title="New List"
-  });
-
-
   @override
   _OldListPageState createState() => new _OldListPageState();
 }
 
 class _OldListPageState extends State<OldListPage> {
 
-  List<Item> items = FakeData.items;
+ ShoppingList list = FakeData.list1;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightGreen[50],
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(list.name),
         backgroundColor: Colors.black87,
       ),
       body: Container(
-        child: OldList(items),
+        child: OldList(list),
       ),
     );
   }
