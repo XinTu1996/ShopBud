@@ -1,30 +1,10 @@
+import 'package:flutter/material.dart';
+
 import 'package:shopbud/model/shoppinglist.dart';
 import 'package:shopbud/model/item.dart';
 import 'package:shopbud/model/store.dart';
 
 class FakeData {
-  static List<ShoppingList> shoppingLists = []
-    ..add(ShoppingList(
-        'list1',
-        'weekly list',
-        'user1',
-        DateTime.parse("2019-02-20 18:23:21"),
-        DateTime.now()
-    ))
-    ..add(ShoppingList(
-        'list2',
-        'list for school',
-        'user1',
-        DateTime.parse("2019-02-02 18:23:21"),
-        DateTime.parse("2019-02-20 18:23:21")
-    ))
-    ..add(ShoppingList(
-        'list3',
-        'list for travel to SF',
-        'user1',
-        DateTime.parse("2019-03-01 18:23:21"),
-        DateTime.parse("2019-03-01 18:23:21")
-    ));
 
   static Store s1 = Store("s1", "Giant Eagle", "5040 Centre Avenue");
 
@@ -88,4 +68,38 @@ class FakeData {
     ..add(apple2)
     ..add(bread2);
 
+  static ShoppingList list1 = new ShoppingList(
+      'list1',
+      'weekly list',
+      'user1',
+      DateTime.parse("2019-02-20 18:23:21"),
+      DateTime.now()
+  );
+
+  static ShoppingList list2 = ShoppingList(
+      'list2',
+      'list for school',
+      'user1',
+      DateTime.parse("2019-02-02 18:23:21"),
+      DateTime.parse("2019-02-20 18:23:21")
+  );
+
+  static ShoppingList list3 = ShoppingList(
+      'list3',
+      'list for travel to SF',
+      'user1',
+      DateTime.parse("2019-03-01 18:23:21"),
+      DateTime.parse("2019-03-01 18:23:21")
+  );
+
+  static List<ShoppingList> shoppingLists = []
+    ..add(list1)
+    ..add(list2)
+    ..add(list3);
+
+  FakeData() {
+    list1.addItemList(items);
+  }
+
 }
+

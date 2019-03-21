@@ -35,31 +35,34 @@ class _AddedItemCardState extends State<AddedItemCard> {
   Widget get itemCard {
     return Container(
       width: 330.0,
-      height: 100.0,
+      height: 115.0,
       child: Card(
         color: Colors.black87,
         child: Padding(
           padding: const EdgeInsets.only(
             top: 8.0,
             bottom: 8.0,
-            left: 64.0,
+            left: 40.0,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Text(widget.item.name,
-                      style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-                  Text("\$ " + widget.item.price.toString() + " / " + widget.item.unit,
-                      style: TextStyle(color: Colors.white, fontSize: 17)),
-                  Text(widget.item.status == 1 ? "in-stock" : "out-of-stock",
-                      style: TextStyle(color: Colors.white, fontSize: 14))
-                ],
+              Container(
+                width: 240.0,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Text(widget.item.name,
+                        style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+                    Text("\$ " + widget.item.price.toString() + " / " + widget.item.unit,
+                        style: TextStyle(color: Colors.white, fontSize: 17)),
+                    Text(widget.item.status == 1 ? "in-stock" : "out-of-stock",
+                        style: TextStyle(color: Colors.white, fontSize: 14))
+                  ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -80,7 +83,7 @@ class _AddedItemCardState extends State<AddedItemCard> {
     deviceSize = MediaQuery.of(context).size;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
       child: Container(
         height: 115.0,
         child: Stack(
@@ -89,7 +92,10 @@ class _AddedItemCardState extends State<AddedItemCard> {
               left: 50.0,
               child: itemCard,
             ),
-            Positioned(top: 7.5, child: itemImage),
+            Positioned(
+              top: 15,
+              child: itemImage,
+            ),
           ],
         ),
       ),

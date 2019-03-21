@@ -13,6 +13,14 @@ class ShoppingList {
     this.note,
     this.creator,
     this.createTime,
-    this.updateTime
+    this.updateTime,
   );
+
+  void addItem(Item item) {
+    this.items.add(item);
+  }
+
+  void addItemList(List<Item> items) {
+    this.items = items;
+  }
 }
