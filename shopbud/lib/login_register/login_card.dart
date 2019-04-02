@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopbud/login/login_provider.dart';
+import 'package:shopbud/login_register/error.dart';
 import 'package:shopbud/utils/fake_data.dart';
 import 'package:shopbud/common_ui/gradient_button.dart';
 
@@ -29,7 +29,7 @@ class _LoginCardState extends State<LoginCard>
                 style:
                 new TextStyle(fontSize: 15.0, color: Colors.black),
                 decoration: new InputDecoration(
-                    hintText: "enter username",
+                    hintText: "Enter username",
                     labelText: "Username",
                     labelStyle: TextStyle(fontWeight: FontWeight.w700)),
               ),
@@ -42,7 +42,7 @@ class _LoginCardState extends State<LoginCard>
                 style: new TextStyle(
                     fontSize: 15.0, color: Colors.black),
                 decoration: new InputDecoration(
-                    hintText: "enter password",
+                    hintText: "Enter password",
                     labelText: "Password",
                     labelStyle: TextStyle(fontWeight: FontWeight.w700)),
                 obscureText: true,
@@ -53,15 +53,18 @@ class _LoginCardState extends State<LoginCard>
               Container(
                 child: new GradientButton(
                     onPressed: () {
-                      username == FakeData.username && password == FakeData.password
-                          ? Navigator.pushNamed(context, "/home")
-                          : showValidError(context);
+                      int type = validate(username, password);
+                      type == 2
+                          ? Navigator.pushNamed(context, "/Home")
+                          : showValidError(context, type);
                     },
                     text: "Login"),
               ),
               new FlatButton(
                   child: Text("Register"),
-                  onPressed: () => {}
+                  onPressed: () => {
+                    Navigator.pushNamed(context, "/Register")
+                  }
               ),
             ],
           ),
@@ -82,9 +85,18 @@ class _LoginCardState extends State<LoginCard>
     );
   }
 
-  showValidError(BuildContext context) {
-    LoginProvider.of(context)
-        .validationErrorCallback();
+  // 0: no username
+  // 1: username and password don't match
+  // 2: success
+  int validate(String u, String p) {
+    if (!FakeData.accounts.containsKey(u)) return 0;
+    if (FakeData.accounts[u] != p) return 1;
+    return 2;
+  }
+
+  showValidError(BuildContext context, int type) {
+    PageWithError.of(context)
+        .validationErrorCallback(type);
   }
 
   @override

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopbud/login/login_provider.dart';
-import 'package:shopbud/login/login_background.dart';
-import 'package:shopbud/login/login_card.dart';
-import 'package:shopbud/utils/uidata.dart';
+import 'package:shopbud/login_register/error.dart';
+import 'package:shopbud/login_register/background.dart';
+import 'package:shopbud/login_register/login_card.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -13,7 +12,7 @@ class LoginPage extends StatefulWidget {
 
 class LoginPageState extends State<LoginPage> {
   final scaffoldState = GlobalKey<ScaffoldState>();
-  Widget loginScaffold() => LoginProvider(
+  Widget loginScaffold() => PageWithError(
     validationErrorCallback: showValidationError,
     child: Scaffold(
       key: scaffoldState,
@@ -25,9 +24,9 @@ class LoginPageState extends State<LoginPage> {
     ),
   );
 
-  showValidationError() {
+  showValidationError(int type) {
     scaffoldState.currentState.showSnackBar(SnackBar(
-      content: Text("Username and password didn't match!"),
+      content: Text(type == 0 ? "Username doesn't exist!" : "Username and password don't match!"),
       duration: Duration(seconds: 2),
     ));
   }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:shopbud/home_page.dart';
+import 'package:shopbud/login_register/login_page.dart';
+import 'package:shopbud/login_register/register_page.dart';
 import 'package:shopbud/utils/uidata.dart';
 import 'package:shopbud/shopping_list/historylists_page.dart';
 import 'package:shopbud/shopping_list/oldlist_page.dart';
@@ -22,8 +24,9 @@ class MyApp extends StatelessWidget {
         fontFamily: UIData.quickFont,
         primarySwatch: Colors.amber
       ),
-      home: MyHomePage(),
+      home: LoginPage(),
       routes: <String, WidgetBuilder>{
+        UIData.registerRoute: (BuildContext context) => RegisterPage(),
         UIData.homeRoute: (BuildContext context) => MyHomePage(),
         UIData.historyListsRoute: (BuildContext context) => HistoryListsPage(),
         UIData.oldListRoute: (BuildContext context) => OldListPage(),

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class UIData {
   //routes
-  static const String homeRoute = "/home";
+  static const String homeRoute = "/Home";
   static const String loginRoute = "/Login";
   static const String registerRoute = "/Register";
 
