@@ -6,6 +6,9 @@ import 'package:shopbud/model/store.dart';
 
 class FakeData {
 
+  static String username = "root";
+  static String password = "123456";
+
   static Store s1 = Store("s1", "Giant Eagle", "5040 Centre Avenue");
 
   static Item apple1 = Item(
