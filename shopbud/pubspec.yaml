@@ -28,6 +28,7 @@ dependencies:
   rxdart: ^0.21.0
   flutter_masked_text: ^0.8.0
   scoped_model: ^1.0.1
+  numberpicker: ^1.0.0
 
 dev_dependencies:
   flutter_test:
