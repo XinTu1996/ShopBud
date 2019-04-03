@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class UIData {
   //routes
-  static const String homeRoute = "/home";
+  static const String homeRoute = "/Home";
   static const String loginRoute = "/Login";
   static const String registerRoute = "/Register";
 
@@ -40,6 +40,7 @@ class UIData {
   static const String shoppingImage = "$imageDir/shopping.jpeg";
   static const String timelineImage = "$imageDir/timeline.jpeg";
   static const String verifyImage = "$imageDir/verification.jpg";
+  static const String logoImage = "$imageDir/logo.png";
 
   //login
   static const String enter_code_label = "Phone Number";
