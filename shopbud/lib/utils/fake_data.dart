@@ -1,10 +1,12 @@
-import 'package:flutter/material.dart';
+import 'dart:collection';
 
 import 'package:shopbud/model/shoppinglist.dart';
 import 'package:shopbud/model/item.dart';
 import 'package:shopbud/model/store.dart';
 
 class FakeData {
+
+  static Map<String, String> accounts = new HashMap<String, String>();
 
   static Store s1 = Store("s1", "Giant Eagle", "5040 Centre Avenue");
 
@@ -99,6 +101,7 @@ class FakeData {
 
   FakeData() {
     list1.addItemList(items);
+    accounts.putIfAbsent("root", () => "123456");
   }
 
 }
