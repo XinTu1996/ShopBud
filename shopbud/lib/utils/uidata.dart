@@ -17,7 +17,7 @@ class UIData {
   static const String historyListsRoute = "/History Lists";
   static const String newListRoute = "/Create New List";
   static const String oldListRoute = "/Old List";
-  static const String productsRoute = "Products";
+  static const String productsRoute = "/Products";
 
   //strings
   static const String appName = "ShopBud";
