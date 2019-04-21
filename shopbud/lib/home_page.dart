@@ -6,7 +6,7 @@ import 'package:shopbud/model/menu.dart';
 import 'package:shopbud/utils/uidata.dart';
 import 'package:shopbud/logic/bloc/menu_bloc.dart';
 import 'package:shopbud/account/account.dart';
-import 'package:shopbud/account/about_tile.dart';
+import 'package:shopbud/common_ui/about_tile.dart';
 
 class MyHomePage extends StatelessWidget {
   final _scaffoldState = GlobalKey<ScaffoldState>();

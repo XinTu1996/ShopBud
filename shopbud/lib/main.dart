@@ -8,6 +8,7 @@ import 'package:shopbud/utils/uidata.dart';
 import 'package:shopbud/shopping_list/historylists_page.dart';
 import 'package:shopbud/shopping_list/oldlist_page.dart';
 import 'package:shopbud/shopping_list/newlist_page.dart';
+import 'package:shopbud/shopping_list/products_page.dart';
 import 'package:shopbud/utils/fake_data.dart';
 
 void main() => runApp(MyApp());
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         UIData.historyListsRoute: (BuildContext context) => HistoryListsPage(),
         UIData.oldListRoute: (BuildContext context) => OldListPage(),
         UIData.newListRoute: (BuildContext context) => NewListPage(),
+        UIData.productsRoute: (BuildContext context) => ProductsPage(),
       },
     );
   }
