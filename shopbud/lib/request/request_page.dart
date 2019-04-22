@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
+import 'package:flutter/painting.dart';
 
 class RequestPage extends StatefulWidget {
 
@@ -16,6 +19,16 @@ class RequestPage extends StatefulWidget {
 class _RequestPageState extends State<RequestPage> {
 
   BuildContext _context;
+
+  File _image;
+
+  Future getImage() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+
+    setState(() {
+      _image = image;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -164,7 +177,28 @@ class _RequestPageState extends State<RequestPage> {
                 ),
               ),
             ),
+            FloatingActionButton(
+              backgroundColor: Colors.grey,
+              onPressed: getImage,
+              child: Icon(Icons.add_a_photo),
+            ),
+            Container(
+              padding: EdgeInsets.all(16.0),
+              child: _image == null
+                  ? Text('No image selected.')
+                  : Image.file(_image),
+            ),
           ],
+        ),
+      ),
+      floatingActionButton: Container(
+        width: 100.0,
+        child: FloatingActionButton(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(5.0))
+          ),
+          //onPressed: ,
+          child: Text("Submit"),
         ),
       ),
     );
