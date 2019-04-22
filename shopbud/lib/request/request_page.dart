@@ -103,13 +103,13 @@ class _RequestPageState extends State<RequestPage> {
               child: Container(
                 padding: const EdgeInsets.only(left: 16.0, right: 8.0, top: 16.0),
                 child: Text(
-                  "Contact Info",
+                  "Contact Name",
                   style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
             Container(
-              //height: 80,
+              height: 80,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
@@ -119,10 +119,6 @@ class _RequestPageState extends State<RequestPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Text(
-                          "Name",
-                          style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
                         Expanded(
                           child: TextField(
                             decoration: InputDecoration(
@@ -135,8 +131,18 @@ class _RequestPageState extends State<RequestPage> {
                 ),
               ),
             ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Container(
+                padding: const EdgeInsets.only(left: 16.0, right: 8.0, top: 16.0),
+                child: Text(
+                  "Contact Email",
+                  style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
             Container(
-              //height: 80,
+              height: 80,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
@@ -146,10 +152,6 @@ class _RequestPageState extends State<RequestPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Text(
-                          "Email",
-                          style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
                         Expanded(
                           child: TextField(
                             decoration: InputDecoration(
