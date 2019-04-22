@@ -1,8 +1,8 @@
 DS_Store
 .idea
-.lock
+*.lock
 .packages
 .metadata
-.iml
+*.iml
 ios
 android
