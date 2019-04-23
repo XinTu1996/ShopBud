@@ -14,4 +14,5 @@ class Store {
     this.imageUrl,
   );
 
+
 }
