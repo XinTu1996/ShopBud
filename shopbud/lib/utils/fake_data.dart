@@ -8,7 +8,10 @@ class FakeData {
 
   static Map<String, String> accounts = new HashMap<String, String>();
 
-  static Store s1 = Store("1","s1", "Giant Eagle", "5040 Centre Avenue");
+
+
+  static Store s1 = Store("s1", "Panda", "5846 Forbes Ave","https://www.facebook.com/PandaSupermarket2017/photos/a.103542830255116/103549666921099/?type=1&theater");
+
 
   static Item apple1 = Item(
       "i1",
