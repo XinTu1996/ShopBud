@@ -178,7 +178,7 @@ class _RequestPageState extends State<RequestPage> {
               ),
             ),
             FloatingActionButton(
-              backgroundColor: Colors.grey,
+              backgroundColor: Colors.white70,
               onPressed: getImage,
               child: Icon(Icons.add_a_photo),
             ),
@@ -192,13 +192,14 @@ class _RequestPageState extends State<RequestPage> {
         ),
       ),
       floatingActionButton: Container(
-        width: 100.0,
+        width: 120.0,
         child: FloatingActionButton(
+          backgroundColor: Colors.black,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(5.0))
           ),
           //onPressed: ,
-          child: Text("Submit"),
+          child: Text("Submit", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
         ),
       ),
     );
