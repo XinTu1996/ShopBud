@@ -4,7 +4,15 @@ class Store {
   String id;
   String name;
   String location;
-  String image;
+  String imageUrl;
 
-  Store(this.id, this.name, this.location, this.image);
+
+  Store(
+    this.id,
+    this.name,
+    this.location,
+    this.imageUrl,
+  );
+
+
 }

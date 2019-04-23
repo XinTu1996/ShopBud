@@ -215,7 +215,7 @@ class MyHomePage extends StatelessWidget {
           width: 20.0,
         ),
         Text(
-          menu.title,
+          menu.address,
           textAlign: TextAlign.start,
           style: TextStyle(color: Colors.white),
         ),
@@ -224,10 +224,12 @@ class MyHomePage extends StatelessWidget {
         ),
         FittedBox(
           child: CupertinoButton(
-            onPressed: () => _showModalBottomSheet(context, menu),
+            onPressed: () =>  Navigator.pushNamed(
+                context, "/History Lists"), //now it redirects to shopping list
+                //_showModalBottomSheet(context, menu),
             borderRadius: BorderRadius.circular(50.0),
             child: Text(
-              "Go",
+              "Choose",
               textAlign: TextAlign.left,
               style: TextStyle(color: CupertinoColors.activeBlue),
             ),

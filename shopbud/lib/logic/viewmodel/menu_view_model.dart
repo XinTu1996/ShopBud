@@ -10,25 +10,28 @@ class MenuViewModel {
   getMenuItems() {
     return menuItems = <Menu>[
       Menu(
-          title: "Shopping List",
+          title: "Panda",
           menuColor: Color(0xffc8c4bd),
-          icon: Icons.shopping_cart,
-          image: UIData.shoppingImage,
+          icon: Icons.store,
+          address: "5846 Forbes Ave",
+          image: UIData.panda,
           items: [
             "History Lists",
             "Create New List"
           ]),
       Menu(
-          title: "My Account",
+          title: "SeoulMart",
           menuColor: Color(0xff050505),
-          icon: Icons.person,
-          image: UIData.profileImage,
+          icon: Icons.store,
+          address: "4701 Fifth Ave",
+          image: UIData.seoulmart,
           items: [
             "Advantage Card",
             "Payment",
             "Gift Card",
             "Login Info"
-          ])
+          ]
+      )
       /*
       Menu(
           title: "Login",

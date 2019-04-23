@@ -27,7 +27,10 @@ class MyApp extends StatelessWidget {
         fontFamily: UIData.quickFont,
         primarySwatch: Colors.amber
       ),
-      home: storePromoListView(),
+
+
+      home: MyHomePage(),
+
       routes: <String, WidgetBuilder>{
         UIData.registerRoute: (BuildContext context) => RegisterPage(),
         UIData.homeRoute: (BuildContext context) => MyHomePage(),
