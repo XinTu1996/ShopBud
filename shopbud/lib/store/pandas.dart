@@ -6,14 +6,14 @@ import 'package:shopbud/logic/bloc/product_bloc.dart';
 import 'package:shopbud/model/product.dart';
 import 'package:shopbud/common_ui/common_scaffold.dart';
 
-class ProductPage extends StatefulWidget {
+class PandaPage extends StatefulWidget {
 
   @override
-  _ProductsPageState createState() => _ProductsPageState();
+  _PandaPageState createState() => _PandaPageState();
 
 }
 
-class _ProductsPageState extends State<ProductPage> {
+class _PandaPageState extends State<PandaPage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   BuildContext _context;
   int q = 1;
@@ -254,7 +254,8 @@ class _ProductsPageState extends State<ProductPage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       RaisedButton(
-                        onPressed: () {},
+                        onPressed: () =>  Navigator.pushNamed(
+                            context, "/Request"),
                         textColor: Colors.blue,
                         padding: const EdgeInsets.all(0.0),
                         color: Colors.white,
@@ -267,7 +268,8 @@ class _ProductsPageState extends State<ProductPage> {
                       ),
 
                       RaisedButton(
-                        onPressed: () {},
+                        onPressed: () =>  Navigator.pushNamed(
+                            context, "/Promo"),
                         textColor: Colors.blue,
                         padding: const EdgeInsets.all(0.0),
                         color: Colors.white,

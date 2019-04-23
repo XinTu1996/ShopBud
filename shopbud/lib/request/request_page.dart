@@ -178,6 +178,7 @@ class _RequestPageState extends State<RequestPage> {
               ),
             ),
             FloatingActionButton(
+              heroTag: 'Add Photo',
               backgroundColor: Colors.white70,
               onPressed: getImage,
               child: Icon(Icons.add_a_photo),
@@ -194,12 +195,14 @@ class _RequestPageState extends State<RequestPage> {
       floatingActionButton: Container(
         width: 120.0,
         child: FloatingActionButton(
+          heroTag: 'Submit',
           backgroundColor: Colors.black,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(5.0))
           ),
           //onPressed: ,
           child: Text("Submit", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+          onPressed: () => Navigator.pop(context),
         ),
       ),
     );
