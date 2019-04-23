@@ -12,6 +12,7 @@ import 'package:shopbud/shopping_list/products_page.dart';
 import 'package:shopbud/promotion/promotion_page.dart';
 import 'package:shopbud/promotion/storePromoListView.dart';
 import 'package:shopbud/utils/fake_data.dart';
+import 'package:shopbud/store/pandas.dart';
 
 void main() => runApp(MyApp());
 
