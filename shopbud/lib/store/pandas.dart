@@ -6,14 +6,14 @@ import 'package:shopbud/logic/bloc/product_bloc.dart';
 import 'package:shopbud/model/product.dart';
 import 'package:shopbud/common_ui/common_scaffold.dart';
 
-class ProductsPage extends StatefulWidget {
+class ProductPage extends StatefulWidget {
 
   @override
   _ProductsPageState createState() => _ProductsPageState();
 
 }
 
-class _ProductsPageState extends State<ProductsPage> {
+class _ProductsPageState extends State<ProductPage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   BuildContext _context;
   int q = 1;
@@ -83,7 +83,7 @@ class _ProductsPageState extends State<ProductsPage> {
               product.brand == "" ? product.name : product.brand + " " + product.name,
               softWrap: true,
               overflow: TextOverflow.clip,
-              style: TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold),
+              style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 5.0,
@@ -248,8 +248,10 @@ class _ProductsPageState extends State<ProductsPage> {
         child: Column(
           children: <Widget>[
             searchCard(),
-              new Container(
+            new Container(
                 child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       RaisedButton(
                         onPressed: () {},
@@ -278,9 +280,8 @@ class _ProductsPageState extends State<ProductsPage> {
                         ),
                       ),
                     ]
-                  )
-
-          ),
+                )
+            ),
             Container(
               //height: MediaQuery.of(context).size.height - 230,
               child: bodyData(),
