@@ -9,6 +9,8 @@ import 'package:shopbud/shopping_list/historylists_page.dart';
 import 'package:shopbud/shopping_list/oldlist_page.dart';
 import 'package:shopbud/shopping_list/newlist_page.dart';
 import 'package:shopbud/shopping_list/products_page.dart';
+import 'package:shopbud/promotion/promotion_page.dart';
+import 'package:shopbud/promotion/storePromoListView.dart';
 import 'package:shopbud/utils/fake_data.dart';
 
 void main() => runApp(MyApp());
@@ -25,7 +27,10 @@ class MyApp extends StatelessWidget {
         fontFamily: UIData.quickFont,
         primarySwatch: Colors.amber
       ),
+
+
       home: MyHomePage(),
+
       routes: <String, WidgetBuilder>{
         UIData.registerRoute: (BuildContext context) => RegisterPage(),
         UIData.homeRoute: (BuildContext context) => MyHomePage(),
