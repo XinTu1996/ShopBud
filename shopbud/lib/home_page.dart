@@ -225,7 +225,7 @@ class MyHomePage extends StatelessWidget {
         FittedBox(
           child: CupertinoButton(
             onPressed: () =>  Navigator.pushNamed(
-                context, "/History Lists"), //now it redirects to shopping list
+                context, "/Panda"), //now it redirects to shopping list
                 //_showModalBottomSheet(context, menu),
             borderRadius: BorderRadius.circular(50.0),
             child: Text(

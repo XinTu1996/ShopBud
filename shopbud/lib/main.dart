@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'package:shopbud/home_page.dart';
 import 'package:shopbud/utils/uidata.dart';
-import 'package:shopbud/shopping_list/products_page.dart';
+
+import 'package:shopbud/home_page.dart';
+import 'package:shopbud/store/pandas.dart';
+import 'package:shopbud/request/request_page.dart';
+import 'package:shopbud/promotion/storePromoListView.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,7 +28,9 @@ class MyApp extends StatelessWidget {
 
       routes: <String, WidgetBuilder>{
         UIData.homeRoute: (BuildContext context) => MyHomePage(),
-        UIData.productsRoute: (BuildContext context) => ProductsPage(),
+        UIData.pandaRoute: (BuildContext context) => PandaPage(),
+        UIData.requestRoute: (BuildContext context) => RequestPage(),
+        UIData.promoRoute: (BuildContext context) => storePromoListView(),
       },
     );
   }

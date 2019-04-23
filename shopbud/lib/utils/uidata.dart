@@ -6,18 +6,9 @@ import 'package:flutter/material.dart';
 class UIData {
   //routes
   static const String homeRoute = "/Home";
-  static const String loginRoute = "/Login";
-  static const String registerRoute = "/Register";
-
-  static const String advantageCardRoute = "/Advantage Card";
-  static const String paymentRoute = "/Payment";
-  static const String giftCardRoute = "/Gift Card";
-  static const String loginInfoRoute = "/Login Info";
-
-  static const String historyListsRoute = "/History Lists";
-  static const String newListRoute = "/Create New List";
-  static const String oldListRoute = "/Old List";
-  static const String productsRoute = "/Products";
+  static const String pandaRoute = "/Panda";
+  static const String requestRoute = "/Request";
+  static const String promoRoute = "/Promo";
 
   //strings
   static const String appName = "ShopBud";
