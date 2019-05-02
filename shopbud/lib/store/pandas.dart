@@ -51,7 +51,7 @@ class _PandaPageState extends State<PandaPage> {
                   List<Product> res = new List();
 
                   for (int i = 0; i < products.length; i++) {
-                    if (products[i].category.toLowerCase().contains(key.toLowerCase())) {
+                    if (products[i].category.toLowerCase().contains(key.toLowerCase()) || products[i].name.toLowerCase().contains(key.toLowerCase())) {
                       res.add(products[i]);
                     }
                   }
