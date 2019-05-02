@@ -80,7 +80,7 @@ class _PandaPageState extends State<PandaPage> {
             ),
             */
             Text(
-              product.brand == "" ? product.name : product.brand + " " + product.name,
+              product.name,
               softWrap: true,
               overflow: TextOverflow.clip,
               style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
@@ -236,6 +236,7 @@ class _PandaPageState extends State<PandaPage> {
       ),
     );
     */
+    print('here');
 
     return Scaffold(
       backgroundColor: Colors.lightGreen[50],
@@ -298,6 +299,7 @@ class _PandaPageState extends State<PandaPage> {
 
   }
 
+  /*
   void _showQuantityDialog(BuildContext context) {
     showDialog<int>(
         context: context,
@@ -315,5 +317,6 @@ class _PandaPageState extends State<PandaPage> {
       }
     });
   }
+  */
 
 }

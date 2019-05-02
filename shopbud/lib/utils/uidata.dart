@@ -2,6 +2,11 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:shopbud/model/product.dart';
+
+import 'dart:io';
+import 'dart:convert';
+import 'package:csv/csv.dart';
 
 class UIData {
   //routes
@@ -35,6 +40,10 @@ class UIData {
   static const String logoImage = "$imageDir/logo.png";
   static const String panda = "$imageDir/panda.jpg";
   static const String seoulmart = "$imageDir/seoulmart.jpg";
+
+  //files
+  static const String fileDir = "assets/files";
+  static const String csvPath = "$fileDir/storedata.csv";
 
   //login
   static const String enter_code_label = "Phone Number";
@@ -76,5 +85,34 @@ class UIData {
   /// Returns a random color.
   static Color next() {
     return new Color(0xFF000000 + _random.nextInt(0x00FFFFFF));
+  }
+
+  static List<Product> products;
+
+  getData() async {
+
+    //final path = p.join('directory', 'storedata.csv');
+
+    final input = new File('/Users/xin/Private/17781/gitrepo/ShopBud/shopbud/storedata.csv').openRead();
+    final fields = await input.transform(utf8.decoder).transform(new CsvToListConverter()).toList();
+
+    products = new List();
+
+    for (var i = 1; i < fields.length; i++) {
+      print(i);
+      products.add(Product(
+          category: fields[i][0],
+          name: fields[i][1],
+          price: fields[i][2],
+          unit: fields[i][0] == "Vegetables" || fields[i][0] == "Fruit" ? "lb" : "",
+          status: fields[i][3] == 1 ? true : false,
+          image: fields[i][4]
+      ));
+    }
+
+  }
+
+  UIData() {
+    getData();
   }
 }

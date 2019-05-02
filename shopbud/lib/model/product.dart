@@ -14,6 +14,8 @@ class Product {
   bool status;
   int quantity = 0;
 
+  String category;
+
   Product({
     this.name,
     this.image,
@@ -26,7 +28,8 @@ class Product {
     //this.sizes,
     //this.colors,
     this.status,
-    this.quantity
+    this.quantity,
+    this.category
   });
 
 }

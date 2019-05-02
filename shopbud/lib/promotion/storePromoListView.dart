@@ -54,9 +54,14 @@ class ListViewExampleState extends State<storePromoListView> {
     return storePromos.map((storePromo){
       var container = Container(
         decoration: index % 2 == 0?
-        new BoxDecoration(color: const Color(0xFFb0e0e6)):
         new BoxDecoration(
-            color: const Color(0xFF7ec0ee)
+            color: Colors.lightGreen[50]
+          //color: const Color(0xFF7ec0ee)
+        ):
+        //new BoxDecoration(color: const Color(0xFFb0e0e6)):
+        new BoxDecoration(
+          color: Colors.lightGreen[50]
+            //color: const Color(0xFF7ec0ee)
         ),
         child: new Row(
           children: <Widget>[
