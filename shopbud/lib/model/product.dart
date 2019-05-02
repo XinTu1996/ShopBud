@@ -8,7 +8,7 @@ class Product {
   String image;
   //double rating;
 
-  // String unit;
+  String unit;
   String brand;
   String description;
 
@@ -25,13 +25,12 @@ class Product {
     this.status,
     this.image,
     this.brand,
-    // this.unit,
+    this.unit,
     // this.rating,
-    this.description,
-    // this.totalReviews,
-    // this.sizes,
-    // this.colors,
-    // this.quantity
+    this.description
+    //this.totalReviews,
+    //this.sizes,
+    //this.colors,
   });
 
 }

@@ -6,6 +6,8 @@ import 'package:shopbud/logic/bloc/product_bloc.dart';
 import 'package:shopbud/model/product.dart';
 import 'package:shopbud/common_ui/common_scaffold.dart';
 
+import 'package:shopbud/utils/uidata.dart';
+
 class SeoulPage extends StatefulWidget {
 
   @override
@@ -18,6 +20,8 @@ class _SeoulPageState extends State<SeoulPage> {
   BuildContext _context;
   int q = 1;
 
+  final myController = TextEditingController();
+  ProductBloc _productBloc = ProductBloc(2);
 
   Widget searchCard() => Container(
     height: 80,
@@ -38,10 +42,25 @@ class _SeoulPageState extends State<SeoulPage> {
                 child: TextField(
                   decoration: InputDecoration(
                       border: InputBorder.none, hintText: "Find your product"),
+                  controller: myController,
                 ),
               ),
               FlatButton(
-                onPressed: () {},
+                onPressed: () {
+                  List<Product> products = UIData.products2;
+                  String key = myController.text;
+                  List<Product> res = new List();
+
+                  for (int i = 0; i < products.length; i++) {
+                    if (products[i].category.toLowerCase().contains(key.toLowerCase())) {
+                      res.add(products[i]);
+                    }
+                  }
+
+                  setState(() {
+                    _productBloc.productController.add(res);
+                  });
+                },
                 child: Text("Search"),
               ),
             ],
@@ -191,9 +210,9 @@ class _SeoulPageState extends State<SeoulPage> {
   );
 
   Widget bodyData() {
-    ProductBloc productBloc = ProductBloc();
+    //ProductBloc productBloc = ProductBloc(2);
     return StreamBuilder<List<Product>>(
-        stream: productBloc.productItems,
+        stream: _productBloc.productItems,
         builder: (context, snapshot) {
           return snapshot.hasData
               ? productGrid(snapshot.data)
@@ -201,6 +220,7 @@ class _SeoulPageState extends State<SeoulPage> {
         });
   }
 
+  /*
   void showSnackBar() {
     scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text(
@@ -214,30 +234,11 @@ class _SeoulPageState extends State<SeoulPage> {
       */
     ));
   }
+  */
 
   @override
   Widget build(BuildContext context) {
     _context = context;
-    /*
-    return CommonScaffold(
-      scaffoldKey: scaffoldKey,
-      appTitle: "Products",
-      showDrawer: true,
-      showFAB: false,
-      actionFirstIcon: Icons.shopping_cart,
-      bodyData: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            searchCard(),
-            Container(
-              //height: MediaQuery.of(context).size.height - 230,
-              child: bodyData(),
-            )
-          ],
-        ),
-      ),
-    );
-    */
 
     return Scaffold(
       backgroundColor: Colors.lightGreen[50],
@@ -300,6 +301,7 @@ class _SeoulPageState extends State<SeoulPage> {
 
   }
 
+  /*
   void _showQuantityDialog(BuildContext context) {
     showDialog<int>(
         context: context,
@@ -316,6 +318,14 @@ class _SeoulPageState extends State<SeoulPage> {
         showSnackBar();
       }
     });
+  }
+  */
+
+  @override
+  void dispose() {
+    // Clean up the controller when the Widget is disposed
+    myController.dispose();
+    super.dispose();
   }
 
 }

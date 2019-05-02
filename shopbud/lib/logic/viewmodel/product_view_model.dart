@@ -7,6 +7,7 @@ class ProductViewModel {
 
   ProductViewModel({this.productsItems});
 
+  /*
   getProducts() => <Product>[
         Product(
             // brand: "Meiji",
@@ -163,4 +164,5 @@ class ProductViewModel {
             totalReviews: 22),
             */
       ];
+      */
 }
