@@ -15,16 +15,19 @@ class MenuViewModel {
           icon: Icons.store,
           address: "5846 Forbes Ave",
           image: UIData.panda,
+          link: UIData.pandaRoute,
           items: [
             "History Lists",
             "Create New List"
           ]),
+          //link: UIData.pandaRoute,
       Menu(
           title: "SeoulMart",
           menuColor: Color(0xff050505),
           icon: Icons.store,
           address: "4701 Fifth Ave",
           image: UIData.seoulmart,
+          link: UIData.seoulRoute,
           items: [
             "Advantage Card",
             "Payment",

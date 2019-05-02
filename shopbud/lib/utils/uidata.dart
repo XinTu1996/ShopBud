@@ -14,6 +14,7 @@ class UIData {
   static const String pandaRoute = "/Panda";
   static const String requestRoute = "/Request";
   static const String promoRoute = "/Promo";
+  static const String seoulRoute = "/Seoul";
 
   //strings
   static const String appName = "ShopBud";
@@ -99,7 +100,6 @@ class UIData {
     products = new List();
 
     for (var i = 1; i < fields.length; i++) {
-      print(i);
       products.add(Product(
           category: fields[i][0],
           name: fields[i][1],

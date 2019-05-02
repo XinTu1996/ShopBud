@@ -10,12 +10,12 @@ class ProductViewModel {
   /*
   getProducts() => <Product>[
         Product(
-            brand: "",
-            description: "Apple",
-            image: "https://cnt.gianteagle.com/api/Images/v7/products/1006549/dimensions/large/jpg",
-            name: "Apple",
-            price: 1.49,
-            unit: "lb",
+            // brand: "Meiji",
+            // description: "hello panda chocolate",
+            image: "https://target.scene7.com/is/image/Target/GUEST_083453b0-bd17-48bb-a9b6-02d4546afa66?wid=488&hei=488&fmt=pjpeg",
+            name: "Hello Panda chocolate",
+            price: 1.57,
+            // unit: "pack",
             //rating: 4.0,
             /*
             colors: [
@@ -37,66 +37,94 @@ class ProductViewModel {
               )
             ],
             */
-            quantity: 0,
+
             status: true,
             //sizes: ["S", "M", "L", "XL"],
             //totalReviews: 170
             ),
         Product(
-            brand: "Produce",
-            description: "Fuji Apple",
-            image: "https://cnt.gianteagle.com/api/Images/v7/products/1006549/dimensions/large/jpg",
-            name: "Fuji Apple",
+            //brand: "Meiji",
+            //description: "hello panda strawberry",
+            image: "https://target.scene7.com/is/image/Target/GUEST_cbd19eb4-7d36-452a-8993-586468571046?wid=488&hei=488&fmt=pjpeg",
+            name: "Hello Panda strawberry",
             price: 1.99,
-            unit: "lb",
+
             status: true,
             //rating: 5.0,
             //totalReviews: 10
             ),
         Product(
-            brand: "Produce",
-            description: "Gala Apple",
-            image: "https://cnt.gianteagle.com/api/Images/v7/products/1006550/dimensions/250x250_padded/jpg",
-            name: "Gala Apple",
+            brand: "Meiji",
+            description: "hello panda milk cream",
+            // image: "https://cnt.gianteagle.com/api/Images/v7/products/1006550/dimensions/250x250_padded/jpg",
+            image: "https://images.japancentre.com/images/pics/11569/original/3755-meiji-hello-panda-milk.jpg?1548762761",
+            name: "Hello Panda milk cream",
             price: 1.99,
-            unit: "lb",
-            status: true,
+
+            status: false,
             //rating: 4.5,
             //totalReviews: 0
             ),
         Product(
-            brand: "",
-            description: "Bread",
-            image: "https://cnt.gianteagle.com/api/Images/v7/products/1006549/dimensions/large/jpg",
-            name: "Bread",
+            brand: "Lays",
+            description: "Original flavor",
+            image: "https://www.fritolay.com/images/default-source/blue-bag-image/lays-classic.png?sfvrsn=bd1e563a_2",
+            name: "Classic",
             price: 0.05,
-            unit: "oz",
+
             status: true,
             //rating: 4.0,
             //totalReviews: 5
             ),
         Product(
-            brand: "Giant Eagle",
-            description: "King Size White Enriched Bread",
-            image: "https://cnt.gianteagle.com/api/Images/v7/products/1011392/dimensions/large/jpg",
-            name: "King Size White Enriched Bread",
+            brand: "Lays",
+            description: "Sour Cream & Onion",
+            // image: "https://cnt.gianteagle.com/api/Images/v7/products/1011392/dimensions/large/jpg",
+            image: "https://www.fritolay.com/images/default-source/blue-bag-image/lays-sour-cream-onion.png?sfvrsn=551e563a_2",
+            name: "Sour Cream & Onion",
             price: 0.05,
-            unit: "oz",
-            status: false,
+
+            status: true,
             //rating: 4.8,
             //totalReviews: 12
             ),
         Product(
-            brand: "Schwebel's",
-            description: "Giant bread",
-            image: "https://cnt.gianteagle.com/api/Images/v7/products/641880/dimensions/large/jpg",
-            name: "Giant bread",
+            brand: "Lays",
+            description: "Barbecue",
+            // image: "https://cnt.gianteagle.com/api/Images/v7/products/641880/dimensions/large/jpg",
+            image: "https://www.fritolay.com/images/default-source/blue-bag-image/lays-barbecue.png?sfvrsn=591e563a_6",
+            name: "Barbecue",
             price: 0.14,
-            unit: "oz",
-            status: true,
+
+            status: false,
             //rating: 4.2,
             //totalReviews: 28
             ),
+
+        Product(
+            brand: "Lays",
+            description: "Barbecue",
+            // image: "https://cnt.gianteagle.com/api/Images/v7/products/641880/dimensions/large/jpg",
+            image: "https://www.fritolay.com/images/default-source/blue-bag-image/lays-barbecue.png?sfvrsn=591e563a_6",
+            name: "Barbecue",
+            price: 0.14,
+
+            status: false,
+            //rating: 4.2,
+            //totalReviews: 28
+        ),
+        Product(
+          brand: "Lays",
+          description: "Barbecue",
+          // image: "https://cnt.gianteagle.com/api/Images/v7/products/641880/dimensions/large/jpg",
+          image: "https://www.fritolay.com/images/default-source/blue-bag-image/lays-barbecue.png?sfvrsn=591e563a_6",
+          name: "Barbecue",
+          price: 0.14,
+
+          status: false,
+          //rating: 4.2,
+          //totalReviews: 28
+        ),
         /*
         Product(
             brand: "YOURTURN",

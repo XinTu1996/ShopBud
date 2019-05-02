@@ -6,14 +6,14 @@ import 'package:shopbud/logic/bloc/product_bloc.dart';
 import 'package:shopbud/model/product.dart';
 import 'package:shopbud/common_ui/common_scaffold.dart';
 
-class PandaPage extends StatefulWidget {
+class SeoulPage extends StatefulWidget {
 
   @override
-  _PandaPageState createState() => _PandaPageState();
+  _SeoulPageState createState() => _SeoulPageState();
 
 }
 
-class _PandaPageState extends State<PandaPage> {
+class _SeoulPageState extends State<SeoulPage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   BuildContext _context;
   int q = 1;
@@ -80,7 +80,9 @@ class _PandaPageState extends State<PandaPage> {
             ),
             */
             Text(
+              // product.brand == "" ? product.name : product.brand + " " + product.name,
               product.name,
+
               softWrap: true,
               overflow: TextOverflow.clip,
               style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
@@ -236,10 +238,11 @@ class _PandaPageState extends State<PandaPage> {
       ),
     );
     */
+
     return Scaffold(
       backgroundColor: Colors.lightGreen[50],
       appBar: AppBar(
-        title: Text("Pandas"),
+        title: Text("Seoul Market"),
         backgroundColor: Colors.black87,
       ),
 
@@ -297,7 +300,6 @@ class _PandaPageState extends State<PandaPage> {
 
   }
 
-  /*
   void _showQuantityDialog(BuildContext context) {
     showDialog<int>(
         context: context,
@@ -315,6 +317,5 @@ class _PandaPageState extends State<PandaPage> {
       }
     });
   }
-  */
 
 }

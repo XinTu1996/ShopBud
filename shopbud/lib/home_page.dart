@@ -222,12 +222,24 @@ class MyHomePage extends StatelessWidget {
         SizedBox(
           width: 20.0,
         ),
+
+
         FittedBox(
+
           child: CupertinoButton(
+            /*
             onPressed: () =>  menu.title == "Panda" ? Navigator.pushNamed(
                 context, "/Panda") : Navigator.pushNamed(
                 context, "/SeoulMart"), //now it redirects to shopping list
                 //_showModalBottomSheet(context, menu),
+              */
+            //if (menu.title == 'panda') {
+              onPressed: () =>  Navigator.pushNamed(
+              // context, "/Panda"), //now it redirects to shopping list
+                context, menu.link),
+              //_showModalBottomSheet(context, menu),
+            //}
+
             borderRadius: BorderRadius.circular(50.0),
             child: Text(
               "Choose",

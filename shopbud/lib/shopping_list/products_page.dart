@@ -80,7 +80,8 @@ class _ProductsPageState extends State<ProductsPage> {
             ),
             */
             Text(
-              product.brand == "" ? product.name : product.brand + " " + product.name,
+              // product.brand == "" ? product.name : product.brand + " " + product.name,
+              product.name,
               softWrap: true,
               overflow: TextOverflow.clip,
               style: TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold),
@@ -278,7 +279,7 @@ class _ProductsPageState extends State<ProductsPage> {
                         ),
                       ),
                     ]
-                  )
+                )
 
           ),
             Container(
