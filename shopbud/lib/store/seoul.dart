@@ -6,14 +6,14 @@ import 'package:shopbud/logic/bloc/product_bloc.dart';
 import 'package:shopbud/model/product.dart';
 import 'package:shopbud/common_ui/common_scaffold.dart';
 
-class ProductsPage extends StatefulWidget {
+class SeoulPage extends StatefulWidget {
 
   @override
-  _ProductsPageState createState() => _ProductsPageState();
+  _SeoulPageState createState() => _SeoulPageState();
 
 }
 
-class _ProductsPageState extends State<ProductsPage> {
+class _SeoulPageState extends State<SeoulPage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   BuildContext _context;
   int q = 1;
@@ -82,9 +82,10 @@ class _ProductsPageState extends State<ProductsPage> {
             Text(
               // product.brand == "" ? product.name : product.brand + " " + product.name,
               product.name,
+
               softWrap: true,
               overflow: TextOverflow.clip,
-              style: TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold),
+              style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 5.0,
@@ -241,7 +242,7 @@ class _ProductsPageState extends State<ProductsPage> {
     return Scaffold(
       backgroundColor: Colors.lightGreen[50],
       appBar: AppBar(
-        title: Text("Pandas"),
+        title: Text("Seoul Market"),
         backgroundColor: Colors.black87,
       ),
 
@@ -249,11 +250,14 @@ class _ProductsPageState extends State<ProductsPage> {
         child: Column(
           children: <Widget>[
             searchCard(),
-              new Container(
+            new Container(
                 child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       RaisedButton(
-                        onPressed: () {},
+                        onPressed: () =>  Navigator.pushNamed(
+                            context, "/Request"),
                         textColor: Colors.blue,
                         padding: const EdgeInsets.all(0.0),
                         color: Colors.white,
@@ -266,7 +270,8 @@ class _ProductsPageState extends State<ProductsPage> {
                       ),
 
                       RaisedButton(
-                        onPressed: () {},
+                        onPressed: () =>  Navigator.pushNamed(
+                            context, "/Promo"),
                         textColor: Colors.blue,
                         padding: const EdgeInsets.all(0.0),
                         color: Colors.white,
@@ -280,8 +285,7 @@ class _ProductsPageState extends State<ProductsPage> {
                       ),
                     ]
                 )
-
-          ),
+            ),
             Container(
               //height: MediaQuery.of(context).size.height - 230,
               child: bodyData(),

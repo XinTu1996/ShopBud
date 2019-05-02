@@ -9,6 +9,7 @@ class UIData {
   static const String pandaRoute = "/Panda";
   static const String requestRoute = "/Request";
   static const String promoRoute = "/Promo";
+  static const String seoulRoute = "/Seoul";
 
   //strings
   static const String appName = "ShopBud";
