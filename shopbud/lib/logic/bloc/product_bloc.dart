@@ -9,9 +9,9 @@ class ProductBloc {
   final productController = StreamController<List<Product>>();
   Stream<List<Product>> get productItems => productController.stream;
 
-  ProductBloc() {
+  ProductBloc(int page) {
     //productViewModel.getData();
     //productController.add(productViewModel.getProducts());
-    productController.add(UIData.products);
+    page == 1 ? productController.add(UIData.products1) : productController.add(UIData.products2);
   }
 }

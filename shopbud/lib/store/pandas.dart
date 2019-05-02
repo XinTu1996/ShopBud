@@ -5,6 +5,7 @@ import 'package:numberpicker/numberpicker.dart';
 import 'package:shopbud/logic/bloc/product_bloc.dart';
 import 'package:shopbud/model/product.dart';
 import 'package:shopbud/common_ui/common_scaffold.dart';
+import 'package:shopbud/utils/uidata.dart';
 
 class PandaPage extends StatefulWidget {
 
@@ -18,6 +19,8 @@ class _PandaPageState extends State<PandaPage> {
   BuildContext _context;
   int q = 1;
 
+  final myController = TextEditingController();
+  ProductBloc _productBloc = ProductBloc(1);
 
   Widget searchCard() => Container(
     height: 80,
@@ -38,10 +41,26 @@ class _PandaPageState extends State<PandaPage> {
                 child: TextField(
                   decoration: InputDecoration(
                       border: InputBorder.none, hintText: "Find your product"),
+                  controller: myController,
                 ),
               ),
               FlatButton(
-                onPressed: () {},
+                onPressed: () {
+                  List<Product> products = UIData.products1;
+                  String key = myController.text;
+                  List<Product> res = new List();
+
+                  for (int i = 0; i < products.length; i++) {
+                    if (products[i].category.toLowerCase().contains(key.toLowerCase())) {
+                      res.add(products[i]);
+                    }
+                  }
+
+                  setState(() {
+                    _productBloc.productController.add(res);
+                  });
+
+                },
                 child: Text("Search"),
               ),
             ],
@@ -189,9 +208,8 @@ class _PandaPageState extends State<PandaPage> {
   );
 
   Widget bodyData() {
-    ProductBloc productBloc = ProductBloc();
     return StreamBuilder<List<Product>>(
-        stream: productBloc.productItems,
+        stream: _productBloc.productItems,
         builder: (context, snapshot) {
           return snapshot.hasData
               ? productGrid(snapshot.data)
@@ -199,6 +217,7 @@ class _PandaPageState extends State<PandaPage> {
         });
   }
 
+  /*
   void showSnackBar() {
     scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text(
@@ -212,30 +231,12 @@ class _PandaPageState extends State<PandaPage> {
       */
     ));
   }
+  */
 
   @override
   Widget build(BuildContext context) {
     _context = context;
-    /*
-    return CommonScaffold(
-      scaffoldKey: scaffoldKey,
-      appTitle: "Products",
-      showDrawer: true,
-      showFAB: false,
-      actionFirstIcon: Icons.shopping_cart,
-      bodyData: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            searchCard(),
-            Container(
-              //height: MediaQuery.of(context).size.height - 230,
-              child: bodyData(),
-            )
-          ],
-        ),
-      ),
-    );
-    */
+
     return Scaffold(
       backgroundColor: Colors.lightGreen[50],
       appBar: AppBar(
@@ -253,31 +254,23 @@ class _PandaPageState extends State<PandaPage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       RaisedButton(
-                        onPressed: () =>  Navigator.pushNamed(
-                            context, "/Request"),
+                        onPressed: () =>  Navigator.pushNamed(context, "/Request"),
                         textColor: Colors.blue,
                         padding: const EdgeInsets.all(0.0),
                         color: Colors.white,
-
                         child: Container(
                           padding: const EdgeInsets.all(10.0),
                           child: Text('Request'),
-
                         ),
                       ),
-
                       RaisedButton(
-                        onPressed: () =>  Navigator.pushNamed(
-                            context, "/Promo"),
+                        onPressed: () =>  Navigator.pushNamed(context, "/Promo"),
                         textColor: Colors.blue,
                         padding: const EdgeInsets.all(0.0),
                         color: Colors.white,
-
-
                         child: Container(
                           padding: const EdgeInsets.all(10.0),
                           child: Text('Promotions'),
-
                         ),
                       ),
                     ]
@@ -290,11 +283,7 @@ class _PandaPageState extends State<PandaPage> {
           ],
         ),
       ),
-
-
-
     );
-
   }
 
   /*
@@ -316,5 +305,12 @@ class _PandaPageState extends State<PandaPage> {
     });
   }
   */
+
+  @override
+  void dispose() {
+    // Clean up the controller when the Widget is disposed
+    myController.dispose();
+    super.dispose();
+  }
 
 }

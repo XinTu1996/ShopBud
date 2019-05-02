@@ -88,19 +88,42 @@ class UIData {
     return new Color(0xFF000000 + _random.nextInt(0x00FFFFFF));
   }
 
-  static List<Product> products;
+  static List<Product> products1;
+  static List<Product> products2;
 
-  getData() async {
+  getData1() async {
 
     //final path = p.join('directory', 'storedata.csv');
 
     final input = new File('/Users/xin/Private/17781/gitrepo/ShopBud/shopbud/storedata.csv').openRead();
     final fields = await input.transform(utf8.decoder).transform(new CsvToListConverter()).toList();
 
-    products = new List();
+    products1 = new List();
 
     for (var i = 1; i < fields.length; i++) {
-      products.add(Product(
+      products1.add(Product(
+          category: fields[i][0],
+          name: fields[i][1],
+          price: fields[i][2],
+          unit: fields[i][0] == "Vegetables" || fields[i][0] == "Fruit" ? "lb" : "",
+          status: fields[i][3] == 1 ? true : false,
+          image: fields[i][4]
+      ));
+    }
+
+  }
+
+  getData2() async {
+
+    //final path = p.join('directory', 'storedata.csv');
+
+    final input = new File('/Users/xin/Private/17781/gitrepo/ShopBud/shopbud/storedata1.csv').openRead();
+    final fields = await input.transform(utf8.decoder).transform(new CsvToListConverter()).toList();
+
+    products2 = new List();
+
+    for (var i = 1; i < fields.length; i++) {
+      products2.add(Product(
           category: fields[i][0],
           name: fields[i][1],
           price: fields[i][2],
@@ -113,6 +136,7 @@ class UIData {
   }
 
   UIData() {
-    getData();
+    getData1();
+    getData2();
   }
 }

@@ -17,6 +17,8 @@ class _ProductsPageState extends State<ProductsPage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   BuildContext _context;
   int q = 1;
+  ProductBloc productBloc = ProductBloc(1);
+  Stream<List<Product>> _stream;
 
 
   Widget searchCard() => Container(
@@ -41,7 +43,9 @@ class _ProductsPageState extends State<ProductsPage> {
                 ),
               ),
               FlatButton(
-                onPressed: () {},
+                onPressed: () {
+
+                },
                 child: Text("Search"),
               ),
             ],
@@ -190,9 +194,9 @@ class _ProductsPageState extends State<ProductsPage> {
   );
 
   Widget bodyData() {
-    ProductBloc productBloc = ProductBloc();
+    _stream = productBloc.productItems;
     return StreamBuilder<List<Product>>(
-        stream: productBloc.productItems,
+        stream: _stream, //productBloc.productItems,
         builder: (context, snapshot) {
           return snapshot.hasData
               ? productGrid(snapshot.data)
