@@ -1,32 +1,37 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
 class Product {
+  String category;
   String name;
+  double price;
+  bool status;
   String image;
   //double rating;
-  double price;
-  String unit;
+
+  // String unit;
   String brand;
   String description;
+
   //int totalReviews;
   //List<String> sizes;
   //List<ProductColor> colors;
-  bool status;
-  int quantity = 0;
+
+  // int quantity = 0;
 
   Product({
+    this.category,
     this.name,
+    this.price,
+    this.status,
     this.image,
     this.brand,
-    this.price,
-    this.unit,
-    //this.rating,
+    // this.unit,
+    // this.rating,
     this.description,
-    //this.totalReviews,
-    //this.sizes,
-    //this.colors,
-    this.status,
-    this.quantity
+    // this.totalReviews,
+    // this.sizes,
+    // this.colors,
+    // this.quantity
   });
 
 }

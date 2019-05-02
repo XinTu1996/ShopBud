@@ -8,6 +8,7 @@ class Menu {
   List<String> items;
   BuildContext context;
   Color menuColor;
+  String link;
 
   Menu({
     this.title,
@@ -16,6 +17,7 @@ class Menu {
     this.address,
     this.items,
     this.context,
-    this.menuColor = Colors.black
+    this.menuColor = Colors.black,
+    this.link,
   });
 }

@@ -80,7 +80,8 @@ class _PandaPageState extends State<PandaPage> {
             ),
             */
             Text(
-              product.brand == "" ? product.name : product.brand + " " + product.name,
+              // product.brand == "" ? product.name : product.brand + " " + product.name,
+              product.name,
               softWrap: true,
               overflow: TextOverflow.clip,
               style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
