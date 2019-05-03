@@ -96,7 +96,7 @@ class UIData {
 
     //final path = p.join('directory', 'storedata.csv');
 
-    final input = new File('/Users/xin/Private/17781/gitrepo/ShopBud/shopbud/storedata.csv').openRead();
+    //final input = new File('/Users/xin/Private/17781/gitrepo/ShopBud/shopbud/storedata.csv').openRead();
     //final fields = await input.transform(utf8.decoder).transform(new CsvToListConverter()).toList();
     final fields = const CsvToListConverter(textDelimiter: '"', fieldDelimiter: ',', eol: '\n').convert(CSV.s1);
 
@@ -119,7 +119,7 @@ class UIData {
 
     //final path = p.join('directory', 'storedata.csv');
 
-    final input = new File('/Users/xin/Private/17781/gitrepo/ShopBud/shopbud/storedata1.csv').openRead();
+    //final input = new File('/Users/xin/Private/17781/gitrepo/ShopBud/shopbud/storedata1.csv').openRead();
     //final fields = await input.transform(utf8.decoder).transform(new CsvToListConverter()).toList();
     final fields = const CsvToListConverter(textDelimiter: '"', fieldDelimiter: ',', eol: '\n').convert(CSV.s2);
 
