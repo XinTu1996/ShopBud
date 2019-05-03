@@ -216,7 +216,10 @@ class _SeoulPageState extends State<SeoulPage> {
         stream: _productBloc.productItems,
         builder: (context, snapshot) {
           return snapshot.hasData
-              ? productGrid(snapshot.data)
+              ? Container(
+            height: MediaQuery.of(context).size.height - 200,
+            child: productGrid(snapshot.data),
+          )
               : Center(child: CircularProgressIndicator());
         });
   }
