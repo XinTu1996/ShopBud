@@ -233,12 +233,9 @@ class MyHomePage extends StatelessWidget {
                 context, "/SeoulMart"), //now it redirects to shopping list
                 //_showModalBottomSheet(context, menu),
               */
-            //if (menu.title == 'panda') {
+
               onPressed: () =>  Navigator.pushNamed(
-              // context, "/Panda"), //now it redirects to shopping list
                 context, menu.link),
-              //_showModalBottomSheet(context, menu),
-            //}
 
             borderRadius: BorderRadius.circular(50.0),
             child: Text(

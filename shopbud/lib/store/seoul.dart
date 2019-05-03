@@ -184,6 +184,7 @@ class _SeoulPageState extends State<SeoulPage> {
   );
 
   Widget productGrid(List<Product> products) => GridView.count(
+    physics: ScrollPhysics(),
     crossAxisCount: MediaQuery.of(_context).orientation == Orientation.portrait ? 2 : 3,
     shrinkWrap: true,
     children: products
