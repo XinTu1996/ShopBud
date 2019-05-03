@@ -94,8 +94,8 @@ class UIData {
   getData1() async {
 
     //final path = p.join('directory', 'storedata.csv');
-
-    final input = new File('/Users/xin/Private/17781/gitrepo/ShopBud/shopbud/storedata.csv').openRead();
+    final input = new File('/Users/allenchao/AndroidStudioProjects/ShopBud/shopbud/storedata.csv').openRead();
+    //final input = new File('/Users/xin/Private/17781/gitrepo/ShopBud/shopbud/storedata.csv').openRead();
     final fields = await input.transform(utf8.decoder).transform(new CsvToListConverter()).toList();
 
     products1 = new List();
@@ -117,7 +117,7 @@ class UIData {
 
     //final path = p.join('directory', 'storedata.csv');
 
-    final input = new File('/Users/xin/Private/17781/gitrepo/ShopBud/shopbud/storedata1.csv').openRead();
+    final input = new File('/Users/allenchao/AndroidStudioProjects/ShopBud/shopbud/storedata1.csv').openRead();
     final fields = await input.transform(utf8.decoder).transform(new CsvToListConverter()).toList();
 
     products2 = new List();
