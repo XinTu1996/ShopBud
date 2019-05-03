@@ -350,8 +350,10 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     _context = context;
     deviceSize = MediaQuery.of(context).size;
+    /*
     return defaultTargetPlatform == TargetPlatform.iOS
         ? homeIOS(context)
-        : homeScaffold(context);
+        : homeScaffold(context);*/
+    return homeIOS(context);
   }
 }

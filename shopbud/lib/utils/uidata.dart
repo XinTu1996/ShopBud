@@ -7,6 +7,7 @@ import 'package:shopbud/model/product.dart';
 import 'dart:io';
 import 'dart:convert';
 import 'package:csv/csv.dart';
+import 'package:shopbud/utils/csv.dart';
 
 class UIData {
   //routes
@@ -91,12 +92,13 @@ class UIData {
   static List<Product> products1;
   static List<Product> products2;
 
-  getData1() async {
+  getData1() {
 
     //final path = p.join('directory', 'storedata.csv');
-    final input = new File('/Users/allenchao/AndroidStudioProjects/ShopBud/shopbud/storedata.csv').openRead();
-    //final input = new File('/Users/xin/Private/17781/gitrepo/ShopBud/shopbud/storedata.csv').openRead();
-    final fields = await input.transform(utf8.decoder).transform(new CsvToListConverter()).toList();
+
+    //final fields = await input.transform(utf8.decoder).transform(new CsvToListConverter()).toList();
+    final fields = const CsvToListConverter(textDelimiter: '"', fieldDelimiter: ',', eol: '\n').convert(CSV.s1);
+
 
     products1 = new List();
 
@@ -113,12 +115,12 @@ class UIData {
 
   }
 
-  getData2() async {
+  getData2() {
 
     //final path = p.join('directory', 'storedata.csv');
+    //final fields = await input.transform(utf8.decoder).transform(new CsvToListConverter()).toList();
+    final fields = const CsvToListConverter(textDelimiter: '"', fieldDelimiter: ',', eol: '\n').convert(CSV.s2);
 
-    final input = new File('/Users/allenchao/AndroidStudioProjects/ShopBud/shopbud/storedata1.csv').openRead();
-    final fields = await input.transform(utf8.decoder).transform(new CsvToListConverter()).toList();
 
     products2 = new List();
 
